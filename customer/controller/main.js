@@ -293,6 +293,7 @@ document.getElementById("checkoutButton").addEventListener("click", () => {
 
   // Lưu giỏ hàng rỗng vào localStorage
   saveCartToLocalStorage();
+  alert("Thanh toán thành công");
 });
 // hàm remove
 function removeProductFromCart(productId) {

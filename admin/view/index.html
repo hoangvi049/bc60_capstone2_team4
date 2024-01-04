@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Quản lý sản phẩm</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <!-- FontAwesome 6.2.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../asset/css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-sm">
+      <a class="navbar-title" href="../../index.html">Home</a>
+      <ul>
+        <li class="nav-item active">
+          <a class="nav-link" style="color: red;" href="../../admin/view/index.html">Admin Page</a>
+        </li>
+        <li>
+          <a class="nav-link" href="../../customer/view/index.html">Customer Page</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <header class="display-4 my-4 text-center">
+      <h2>CyberPhone</h2>
+    </header>
+    <!-- Phan tab menu -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" href="#DanhSachSP" role="tab" data-toggle="tab">Danh sách sản phẩm</a>
+      </li>
+
+    </ul>
+    <!-- Thêm phần tử dropdown (select) -->
+    <div class="form-group mt-3">
+      <label for="filterLoaiSP">Lọc theo loại sản phẩm:</label>
+      <select class="form-control" id="filterLoaiSP">
+        <option value="all">Tất cả</option>
+        <option value="samsung">Samsung</option>
+        <option value="iphone">iPhone</option>
+      </select>
+    </div>
+
+    <br />
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!--Danh sách sản phẩm -->
+      <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
+        <div class="row">
+          <div class="col-md-8">
+            <!-- BEGIN BUTTOM THÊM MỚI -->
+            <!-- Thêm Mới -->
+            <button button id="btnThemSP" class="btn btn-success btn-add-new" onclick="addNewProductAndDisableUpdate()"
+              data-toggle="modal" data-target="#myModal">
+              <i class="fa fa-plus mr-1"></i>
+              Thêm Mới
+            </button>
+            <!-- END BUTTON THÊM MỚI -->
+          </div>
+          <div class="col-md-4">
+            <!-- BEGIN TÌM KIẾM -->
+            <div class="input-group mb-3">
+              <input type="text" id="txtSearch" class="form-control" placeholder="Nhập từ khóa"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" />
+              <div class="input-group-append">
+                <span id="searchIcon" class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+              </div>
+            </div>
+            <!-- END TÌM KIẾM -->
+          </div>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="tblSanPham" id="tblSanPham">
+          <!-- BEGIN TABLE SẢN PHẨM -->
+          <table class="table table-bordered table-hover table-success">
+            <thead>
+              <th>STT</th>
+              <th>Tên Sản Phẩm</th>
+              <th>Giá</th>
+              <th>Màn Hình</th>
+              <th>Camera sau</th>
+              <th>Camera trước</th>
+              <th>Hình Ảnh</th>
+              <th>Mô tả</th>
+              <th>Loại Sản Phẩm</th>
+              <th>Tùy Chọn</th>
+            </thead>
+            <tbody id="tblDanhSachSP"></tbody>
+          </table>
+          <!-- END TABLE SẢN PHẨM -->
+        </div>
+        <br />
+        <!-- Thêm nút sắp xếp giá tăng dần và giảm dần -->
+        <button class="btn btn-primary" id="btnSortAsc"> giá tăng dần</button>
+        <button class="btn btn-primary" id="btnSortDesc"> giá giảm dần</button>
+      </div>
+
+
+      <!--KetThuc Tabmenu-->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Thêm sản phẩm</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Tên Sản Phẩm</label>
+                <input id="TenSP" type="text" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+                <div id="errorTenSP" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Giá</label>
+                <input type="number" id="GiaSP" class="form-control" placeholder="Nhập vào giá" />
+                <div id="errorGiaSP" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Màn Hình</label>
+                <input id="manHinh" type="text" class="form-control" placeholder="Nhập vào loại màn hình" />
+                <div id="errorManHinh" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Camera sau</label>
+                <input id="camSau" type="text" class="form-control" placeholder="Nhập vào camera sau" />
+                <div id="errorCameraSau" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Camera trước</label>
+                <input id="camTruoc" type="text" class="form-control" placeholder="Nhập vào camera trước" />
+                <div id="errorCameraTruoc" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Hình Ảnh</label>
+                <input id="HinhSP" type="file" class="form-control" placeholder="Nhập vào hình ảnh" />
+                <div id="errorHinhSP" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label>Mô tả</label>
+                <input id="moTa" class="form-control" placeholder="Nhập vào mô tả " />
+                <div id="errorMoTa" class="text-danger"></div>
+              </div>
+              <div class="form-group">
+                <label for="">Loại sản phẩm: </label>
+                <select class="form-control" id="loaiSP">
+                  <option value="samsung">Samsung</option>
+                  <option value="iphone">Iphone</option>
+                  <option value="other">Other</option>
+                </select>
+                <div id="errorLoaiSP" class="text-danger"></div>
+              </div>
+              <button class="btn btn-danger float-right " onclick=" resetForm()" data-dismiss="modal">Huỷ</button>
+              <button class="btn btn-success float-right " id="btnCapNhat">Cập nhật</button>
+              <button onclick="addNewProduct()" id="btnThemSanPham" class="btn btn-primary float-right ">Thêm sản
+                phẩm</button>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <footer>
+      <div class="container">
+        <div class="footer_bottom">
+          <div class="item ">
+            <ul class="footer_contact">
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <span>1800-123-4567 <br>
+                  +91 987-654-3210</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@example.com <br>
+                  services@gmail.com</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Demo Address Marmora <br>
+                  Road City</span>
+              </li>
+            </ul>
+          </div>
+          <div class="item ">
+            <h3>Our links</h3>
+            <ul>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Home</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Services</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Team</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Blog</a></li>
+
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Strategy & Research</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Web Development</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Web Solution</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Digital Marketing</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>App Design</a></li>
+
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Other links</h3>
+            <ul>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>FAQ</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Portfolio</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Privacy Policy</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Terms & Conditions</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i>Support</a></li>
+
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="footer_copyright">
+        <div class="container">
+          <div class="footer_content">
+            <div class="footer_left">
+              <p>Copyright © 2021 <span>DexignZone</span> . All rights reserved.</p>
+            </div>
+            <div class="footer_right">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../services/AdProductAPI.js"></script>
+    <script src="../model/AdProduct.js"></script>
+    <!-- <script type="module" src="../controller/main.js"></script> -->
+    <script src="../controller/AdMain.js"></script>
+</body>
+
+</html>

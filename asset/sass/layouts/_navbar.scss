@@ -1,0 +1,21 @@
+.container{
+    .navbar{
+        display: flex;
+        justify-content: space-around;
+        height: 100px;
+        background-color: #563D7C;
+        border-radius: 5px;
+        .navbar-title{
+            font-size: 30px;
+            font-weight: 500;
+        }   
+    }
+li{
+        
+            &.nav-item.active{
+                a{
+                    color: red;
+                }
+            }
+        }
+    }

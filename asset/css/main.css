@@ -1,0 +1,846 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #00ADEF, #fff);
+}
+
+a {
+  color: black;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1199px;
+  margin: auto;
+}
+
+.container .navbar {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  background-color: #563D7C;
+  border-radius: 5px;
+}
+.container .navbar .navbar-title {
+  font-size: 30px;
+}
+
+.tab-content thead {
+  text-align: center;
+  text-transform: uppercase;
+}
+.tab-content tr {
+  font-size: 17px;
+  text-align: center;
+}
+.tab-content tr button {
+  padding: 20px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
+  background-size: 200%;
+  border: 1px solid transparent;
+  transition: all 0.5s;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.tab-content tr button:hover {
+  background-position: right center;
+}
+nav-item active a{
+  color: red;
+}
+
+footer {
+  display: block;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+}
+footer .footer_bottom {
+  display: flex;
+  padding: 70px 0;
+  position: relative;
+}
+footer .item {
+  width: 25%;
+}
+footer .item ul {
+  margin-top: 30px;
+  margin-bottom: 1rem;
+}
+footer .item li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+footer .item .footer_contact i {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+  text-align: center;
+  background: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
+  display: block;
+  border-radius: 50px;
+}
+footer .item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  color: #fff;
+}
+footer .item a {
+  color: black;
+  font-size: 16px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+footer .footer_copyright {
+  background-color: #1f343b;
+  padding: 10px 0;
+  position: relative;
+}
+footer .footer_copyright a {
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s;
+}
+footer .footer_copyright .footer_content {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer_copyright .footer_content .footer_left span {
+  color: #f55f8d;
+}/*# sourceMappingURL=main.css.map */
+footer .item h3{
+  color: black !important;
+}
+
+
+/* Khi màn hình có độ rộng nhỏ hơn 576px (điện thoại di động) */
+@media screen and (max-width: 576px) {
+
+  .btn {
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  /* Đổi màu nền và màu chữ cho button CART */
+  #cartButton {
+    background-color: rebeccapurple;
+    color: white;
+  }
+
+  /* Đổi màu nền và màu chữ cho button THANH TOÁN */
+  #checkoutButton {
+    background-color: green;
+    color: yellow;
+  }
+  body {
+      background-color:burlywood; /* Thay đổi màu nền tại đây */
+  }
+  .table-bordered td, .table-bordered th {
+    border: 2px solid lightcoral;
+  }
+  .btn-add-new {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 25px;
+      text-align: center;
+      color: white; 
+      background-color: rebeccapurple;
+      border: none; 
+      padding: 10px 15px; 
+      border-radius: 5px; 
+    }
+  
+    .btn-add-new:hover {
+      background-color: #0056b3; /* Màu nền hover */
+      cursor: pointer;
+    }
+  .navbar {
+      flex-direction: column; /* Xếp theo cột */
+    }
+  header h2{
+    color:#ff5733; 
+    text-align: center;
+    font-weight: 700;
+   
+  }
+    /* Đảo chiều các nút sắp xếp để hiển thị theo dạng dọc */
+#btnSortAsc,
+#btnSortDesc {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: greenyellow;
+  font-weight: 700;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover khi di chuột vào nút */
+#btnSortAsc:hover,
+#btnSortDesc:hover {
+  background-color: green;
+}
+
+/* Căn giữa theo chiều ngang */
+.btn-container {
+  text-align: center;
+}
+  .tblSanPham table {
+    color: green; 
+    font-weight: bold;
+  }
+  .footer_bottom .item a {
+    color: green; 
+    font-weight: 700;
+  }
+  .footer_bottom .item span {
+    color: orange; 
+    font-weight: 700;
+  }
+ 
+  .display-4 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .footer_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .item {
+    flex: 0 0 100%;
+  }
+  
+  .tblSanPham table {
+    width: 100%;
+  }
+  .tblSanPham thead {
+    display: none;
+  }
+  .tblSanPham tbody {
+    display: block;
+  }
+  .tblSanPham tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 5px solid darkviolet;
+    border-radius: 5px;
+  }
+  .tblSanPham td {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+  .tblSanPham td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0056b3;
+  }
+  footer .footer_copyright a {
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 14px;
+  color:chocolate;
+  background-color:darkolivegreen;
+  transition: all 0.5s;
+  }
+}
+/* Khi màn hình có độ rộng lớn hơn 576px và nhỏ hơn 768px (tablets) */
+@media screen and (min-width: 577px) and (max-width: 767px) {
+
+  .btn {
+    /* margin-right: 20px; */
+    margin-top: 5px;
+    /* width: 20%; */
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+
+  /* Đổi màu nền và màu chữ cho button CART */
+  #cartButton {
+    background-color: black;
+    color: white;
+  }
+
+  /* Đổi màu nền và màu chữ cho button THANH TOÁN */
+  #checkoutButton {
+    background-color: yellowgreen;
+    color: green;
+  }
+  body {
+      background-color:plum; 
+    }
+    .table-bordered td, .table-bordered th {
+      border: 2px solid white;
+    }
+  .btn-add-new {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 25px;
+      text-align: center;
+      color: black; 
+      background-color:aquamarine;
+      border: none; 
+      padding: 10px 15px; 
+      border-radius: 5px; 
+      font-weight: 700;
+    }
+  
+    .btn-add-new:hover {
+      background-color: #0056b3; /* Màu nền hover */
+      cursor: pointer;
+    }
+  .navbar {
+      flex-direction: column; /* Xếp theo cột */
+    }
+    .container .navbar .navbar-title  {
+      color:brown;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  header h2{
+    color:#ff5733; 
+    text-align: center;
+    font-weight: 700;
+   
+  }
+    /* Đảo chiều các nút sắp xếp để hiển thị theo dạng dọc */
+#btnSortAsc,
+#btnSortDesc {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover khi di chuột vào nút */
+#btnSortAsc:hover,
+#btnSortDesc:hover {
+  background-color: green;
+  color: yellow;
+}
+
+/* Căn giữa theo chiều ngang */
+.btn-container {
+  text-align: center;
+}
+  .tblSanPham table {
+    color: purple;
+    font-weight:bold;
+  }
+  .footer_bottom .item a {
+    color: green; 
+    font-weight: 800;
+    font-size: 20px;
+  }
+  .footer_bottom .item span {
+    color: cyan;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .footer_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .item {
+    flex: 0 0 50%; 
+  }
+  .tblSanPham table {
+    width: 100%;
+  }
+  .tblSanPham thead {
+    display: none;
+  }
+  .tblSanPham tbody {
+    display: block;
+  }
+  .tblSanPham tr {
+    display: block;
+    margin-bottom: 25px;
+    border: 5px solid #ff5733;
+    border-radius: 5px;
+  }
+  .tblSanPham td {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .tblSanPham td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  footer .item h3 {
+    font-size: 30px;
+    color: red;  
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 25px;
+    font-weight: 700;
+    color:cadetblue;
+  }
+  footer .footer_copyright a {
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 14px;
+  color:lightsalmon;
+  background-color:#563D7C;
+  transition: all 0.5s;
+  }
+}
+/* Khi màn hình có độ rộng từ 768px đến 992px (tablets) */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .btn {
+    /* margin-right: 20px; */
+    margin-top: 5px;
+    /* width: 50%; */
+    font-size: 20px;
+    font-weight: 700;
+  }
+  /* Đổi màu nền và màu chữ cho button CART */
+  #cartButton {
+    background-color:blue;
+    color: white;
+  }
+
+  /* Đổi màu nền và màu chữ cho button THANH TOÁN */
+  #checkoutButton {
+    background-color:blueviolet;
+    color: yellow;
+  }
+  body {
+      background-color:khaki; 
+    }
+  label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 20px;
+      font-weight: 600;
+  }
+  .table-bordered td, .table-bordered th {
+    border: 2px solid chartreuse;
+  }
+  .form-control {
+      display: block;
+      width: 80%;
+      padding: 0.375rem 0.75rem;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #495057;
+      font-weight: 600;
+      background-color:blanchedalmond ;
+      
+      border-radius: 0.25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .btn-add-new {
+      display: block;
+      width: 50%;
+      margin-bottom: 30px;
+      font-size: 25px;
+      text-align: center;
+      color: black; 
+      background-color:blue;
+      border: none; 
+      padding: 10px 15px; 
+      border-radius: 5px; 
+      font-weight: 700;
+    }
+  
+    .btn-add-new:hover {
+      background-color:#ff5733; 
+      cursor: pointer;
+    }
+    .nav-link {
+      display: block;
+      padding-top: 5px;
+      font-weight: 600;
+      color:yellow ;
+  }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      color: green;
+      background-color:#f8ae56;
+      border-color: #dee2e6 #dee2e6 #fff;
+      font-size: 20px;
+  }
+    .container .navbar{
+      flex-direction: column; 
+      background-color: #f55f8d;
+    }
+    .container .navbar .navbar-title  {
+      color: red;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  header h2{
+    color:darkred; 
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+   
+  }
+    /* Đảo chiều các nút sắp xếp để hiển thị theo dạng dọc */
+#btnSortAsc,
+#btnSortDesc {
+  display: block;
+  width:70%;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 100px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover khi di chuột vào nút */
+#btnSortAsc:hover,
+#btnSortDesc:hover {
+  background-color: green;
+  color: yellow;
+}
+
+/* Căn giữa theo chiều ngang */
+.btn-container {
+  text-align: center;
+}
+  .footer_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .item {
+    flex: 0 0 50%; /* Các div.item sẽ hiển thị theo cột dọc khi trình duyệt có độ rộng trong khoảng từ 768px đến 992px */
+  }
+  .tblSanPham table {
+    color: orange; /* Đổi màu chữ của table thành màu cam khi trình duyệt có độ rộng trong khoảng từ 768px đến 992px */
+    font-weight: 600;
+  }
+  .footer_bottom .item a {
+    color:darkmagenta; /* Đổi màu chữ của các liên kết trong footer thành màu cam đậm khi trình duyệt có độ rộng trong khoảng từ 768px đến 992px */
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .footer_bottom .item span {
+    color: red; /* Đổi màu chữ của các văn bản trong footer thành màu đen khi trình duyệt có độ rộng trong khoảng từ 768px đến 992px */
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  /* Table danh sách sản phẩm responsive */
+  .tblSanPham table {
+    width: 100%;
+  }
+  .tblSanPham thead {
+    display: none;
+  }
+  .tblSanPham tbody {
+    display: block;
+  }
+  .tblSanPham tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 5px solid green;
+    border-radius: 5px;
+  }
+  .tblSanPham td {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .tblSanPham td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 5px;
+  }
+  footer .item h3 {
+    font-weight: bold;
+    font-size: 40px;
+    color:brown; /* Đổi màu chữ của thẻ h3 thành màu cam đậm khi trình duyệt có độ rộng trong khoảng từ 992px đến 1200px */
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: 700;
+    color:darkgreen;
+  }
+  footer .footer_copyright a {
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 20px;
+  color:blanchedalmond;
+  background-color:lightpink;
+  transition: all 0.5s;
+  }
+}
+/* Khi màn hình có độ rộng từ 992px đến 1200px */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .btn {
+    /* margin-right: 20px; */
+    margin-top: 5px;
+    /* width: 50%; */
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  /* Đổi màu nền và màu chữ cho button CART */
+  #cartButton {
+    background-color: white;
+    color: rebeccapurple;
+  }
+
+  /* Đổi màu nền và màu chữ cho button THANH TOÁN */
+  #checkoutButton {
+    background-color:darkolivegreen;
+    color: wheat;
+  }
+  body {
+      background-color:peachpuff; 
+    }
+  label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 25px;
+      font-weight: 700;
+      color:lightsalmon ;
+  }
+  .form-control {
+      display: block;
+      width: 80%;
+      padding: 0.375rem 0.75rem;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #495057;
+      font-weight: 600;
+      background-color:dodgerblue ;
+      border-radius: 0.25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .tblSanPham tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 3px solid green;
+    border-radius: 5px;
+  }
+  .table-bordered td, .table-bordered th {
+    border: 3px solid green;
+}
+  .btn-add-new {
+      display: block;
+      width: 70%;
+      margin-bottom: 30px;
+      font-size: 25px;
+      text-align: center;
+      color:green; 
+      background-color:whitesmoke;
+      border: none; 
+      padding: 10px 15px; 
+      border-radius: 5px; 
+      font-weight: 700;
+    }
+  
+    .btn-add-new:hover {
+      background-color:#ff5733; 
+      cursor: pointer;
+    }
+    .nav-link {
+      display: block;
+      padding-top: 5px;
+      font-weight: 600;
+      font-size: 20px;
+      color:cornflowerblue ;
+  }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      color: green;
+      background-color:#f8ae56;
+      font-size: 30px;
+  }
+    .container .navbar{
+      flex-direction: column; 
+      background-color:darkmagenta;
+    }
+    .container .navbar .navbar-title  {
+      color:darkgoldenrod;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  header h2{
+    color:ghostwhite; 
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+   
+  }
+    /* Đảo chiều các nút sắp xếp để hiển thị theo dạng dọc */
+#btnSortAsc,
+#btnSortDesc {
+  display: block;
+  width:70%;
+  margin-bottom: 10px;
+  background-color:darkorange;
+  color: yellow;
+  font-weight: 700;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 100px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover khi di chuột vào nút */
+#btnSortAsc:hover,
+#btnSortDesc:hover {
+  background-color: green;
+  color:darkblue;
+}
+
+/* Căn giữa theo chiều ngang */
+.btn-container {
+  text-align: center;
+}
+  
+  .footer_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .item {
+    flex: 0 0 33.33%; 
+  }
+  header {
+    color: purple; 
+  }
+  .tblSanPham table {
+    color: green; 
+    font-weight: 700;
+  }
+  .footer_bottom .item a {
+    color: #ff5733;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .footer_bottom .item span {
+    color: #333;
+    font-size: 25px; 
+    font-weight: 700;
+  }
+  footer .item h3 {
+    font-size: 30px;
+    color:chartreuse;  
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: 700;
+    color:indianred;
+  }
+  footer .footer_copyright a {
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 25px;
+  color:azure;
+  background-color:brown;
+  transition: all 0.5s;
+  }
+}
+
+
+
+
+  

@@ -4,7 +4,8 @@ Trang web giả lập mua điện thoại di động trên internet
 
 ## Demo
 
-Insert gif or link to demo
+demo link: https://bc60-capstone2-team4.vercel.app/admin/view/index.html
+demo video: https://www.youtube.com/watch?v=UaF8zzyWoA8
 
 ## Cấu trúc
 
